@@ -36,3 +36,4 @@ The JavaScript code in the `index.html` file provides the functionality for the 
 3. **Complete a Task:** Click on a task to mark it as completed. The task's background color will change.
 4. **Delete a Task:** Click on the delete icon (an "X") next to a task to remove it from the list.
 
+![Task app front end](./make-a-note.png)
