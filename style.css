@@ -1,0 +1,146 @@
+/* Importing the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/* Container styling */
+.container {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Using Poppins font for the container */
+}
+
+/* Body styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background-color: rgb(220, 210, 218); /* Light background color */
+}
+
+/* Box styling */
+.box {
+  width: 450px;
+  height: 550px;
+  padding: 20px;
+  font-size: 2rem;
+  text-align: left;
+  border-radius: 15px;
+  border: none;
+  background-color: hsl(302, 22%, 72%); /* Light purple background color */
+  color: white; /* White text color */
+}
+
+/* Heading styling */
+h2 {
+  width: 420px;
+  font-style: Poppins; /* Poppins font style */
+  font-weight: 700; /* Bold text */
+  text-align: center; /* Centered text */
+  color: rgb(24, 26, 28); /* Dark text color */
+  font-size: 1.75rem; /* Font size */
+}
+
+/* Input box styling */
+#inputBx {
+  position: relative;
+  width: 400px;
+  border: none; /* No border */
+  outline: none; /* No outline */
+  padding: 15px 20px; /* Padding */
+  border-radius: 30px; /* Rounded corners */
+  font-size: 1rem; /* Font size */
+}
+
+/* List item styling */
+.box li {
+  position: relative;
+  width: calc(80% - 80px); /* Adjusted width */
+  display: flex;
+  font-size: 1rem; /* Font size */
+  align-items: center; /* Centered items */
+  margin: 20px;
+  padding: 10px 10px 10px 45px; /* Padding */
+  min-height: 10px;
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  background: rgb(114, 145, 145); /* Background color */
+}
+
+/* Icon styling within list items */
+.box li i {
+  position: absolute;
+  right: -40px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(186, 103, 117); /* Background color */
+  border-radius: 50%; /* Circular icon */
+}
+
+/* Icon before pseudo-element styling */
+.box li i::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: white; /* White color */
+  transform: rotate(45deg); /* Rotate to form X shape */
+}
+
+/* Icon after pseudo-element styling */
+.box li i::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 2px;
+  background: white; /* White color */
+  transform: rotate(-45deg); /* Rotate to form X shape */
+}
+
+/* List item before pseudo-element styling */
+.box li::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  width: 30px;
+  height: 30px;
+  background: hsl(302, 22%, 72%); /* Light purple background color */
+  border-radius: 50%; /* Circular shape */
+}
+
+/* List item done class styling */
+.box li.done {
+  background: rgb(179, 153, 120); /* Background color when done */
+}
+
+/* List item done after pseudo-element styling */
+.box li.done:after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  width: 12px;
+  height: 6px;
+  border-left: 2px solid white; /* White checkmark */
+  border-bottom: 2px solid white; /* White checkmark */
+  transform: rotate(315deg); /* Rotate to form checkmark */
+}
+
+/* List styling */
+#list {
+  position: relative;
+  margin-top: 20px;
+  height: 350px;
+  overflow-y: auto; /* Vertical scroll */
+  padding-right: 10px; /* Padding */
+}
+
+/* Scrollbar track styling */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 15px hsl(302, 22%, 72%); /* Inner shadow */
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px; /* Scrollbar width */
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- The <html> element represents the root of an HTML document -->
+    <head>
+        <!-- The <head> element contains meta-information about the document -->
+        <meta charset="UTF-8">
+        <!-- The <meta charset> defines the character encoding for the document -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- The <meta http-equiv="X-UA-Compatible"> specifies the version of Internet Explorer to render the page -->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- The <meta name="viewport"> gives the browser instructions on how to control the page's dimensions and scaling -->
+
+        <title>To Do List</title>
+        <!-- The <title> element specifies the title of the document, shown in the browser's title bar or tab -->
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- The <link> element defines the relationship between the current document and an external resource (in this case, the CSS file) -->
+    </head>
+
+    <body>
+        <!-- The <body> element represents the content of an HTML document -->
+        <div class="container">
+            <!-- The <div> element is a container for other HTML elements, styled with the "container" class -->
+            <div class="box">
+                <!-- Another <div> element, styled with the "box" class -->
+                <h2>Make a Note</h2>
+                <!-- The <h2> element represents a level 2 heading -->
+                <input type="text" placeholder="Write here. . . . ." id="inputBx">
+                <!-- The <input> element is used to create an interactive control in a web form that accepts user data -->
+                <ul id="list"></ul>
+                <!-- The <ul> element represents an unordered list, with the ID "list" -->
+            </div>
+        </div>
+
+        <script>
+            // Select the input box and the list elements
+            let inputBx = document.querySelector('#inputBx');
+            let list = document.querySelector('#list');
+
+            // Add an event listener to the input box to detect when the "Enter" key is pressed
+            inputBx.addEventListener("keyup", function(event) {
+                if (event.key == "Enter") {
+                    addItem(this.value); // Call the addItem function with the input box value
+                    this.value = ""; // Clear the input box
+                }
+            });
+
+            // Function to add a new item to the list
+            let addItem = (inputBx) => {
+                let listItem = document.createElement("li"); // Create a new list item element
+                listItem.innerHTML = `${inputBx}<i></i>`; // Set the inner HTML of the list item, including an empty <i> element for the delete icon
+
+                // Add an event listener to the list item to toggle the "done" class when clicked
+                listItem.addEventListener("click", function() {
+                    this.classList.toggle('done');
+                });
+
+                // Add an event listener to the <i> element to remove the list item when clicked
+                listItem.querySelector("i").addEventListener("click", function() {
+                    listItem.remove();
+                });
+
+                // Append the new list item to the list
+                list.appendChild(listItem);
+            }
+        </script>
+    </body>
+</html>
